@@ -1,6 +1,6 @@
 from aiogram import Dispatcher
 
+from .user import UserMiddleware
 
 def setup_middlewares(dp: Dispatcher) -> None:
-    pass
-#    dp.update.middleware()
+    dp.update.middleware(UserMiddleware)

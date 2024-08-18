@@ -1,7 +1,10 @@
 from aiogram import Bot, Dispatcher
 from aiogram.client.bot import DefaultBotProperties
 
-from data.config import TELEGRAM_BOT_TOKEN, RD_URI
+from motor.motor_tornado import MotorClient 
+
+from data.config import (MONGO_NAME, MONGO_URL, RD_URI,
+                         TELEGRAM_BOT_TOKEN)
 
 bot = Bot(TELEGRAM_BOT_TOKEN, default=DefaultBotProperties(parse_mode='html'))
 
@@ -16,3 +19,5 @@ else:
     storage = MemoryStorage()
 
 dp = Dispatcher(storage=storage, bot=bot)
+client = MotorClient(MONGO_URL)
+db = client[MONGO_NAME]

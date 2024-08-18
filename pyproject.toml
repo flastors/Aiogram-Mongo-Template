@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "aiogram template"
+name = "aiogram-mongo-template"
 version = "0.1.0"
 description = ""
 authors = ["mainoff"]
@@ -8,10 +8,13 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.12"
 aiogram = "^3.12.0"
+babel = "^2.16.0"
 environs = "^11.0.0"
-redis = "^5.0.8"
 loguru = "^0.7.2"
+motor = "^3.5.1"
+tornado = "^6.4.1"
 pydantic = "^2.8.2"
+redis = "^5.0.8"
 
 
 [build-system]
