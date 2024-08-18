@@ -8,5 +8,5 @@ async def _start(message: Message):
     await message.answer('Hello, I\'m bot')
 
 @router.message()
-async def _echo(message: Message):
-    await message.reply(message.text)
+async def _echo(message: Message, user: dict):
+    await message.reply(f'Hi, your id {user.id}\n\nYour username: {user.username}')
